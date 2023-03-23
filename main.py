@@ -28,7 +28,7 @@ async def convert_video_to_audio(video_file: UploadFile = File(...)):
     
     # 目標ビットレートが8kbps以下の場合、エラーを返す
     if target_kbps < 8:
-        return {"error": f"{target_kbps=} is not supported."}
+        return {"error": f"{target_kbps} is not supported."}
     
     # 音声ファイルを圧縮する
     try:
