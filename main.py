@@ -41,7 +41,6 @@ async def convert_video_to_audio(video_file: UploadFile = File(...)):
     os.remove(audio_file)
     
     # ファイルサイズが25MB以下かチェック
-    print(f"{len(compressed_audio)=}")
     if len(compressed_audio) > TARGET_FILE_SIZE:
         return {"error": "The compressed audio file is too large. Please upload a shorter video or reduce the audio bitrate."}
     
